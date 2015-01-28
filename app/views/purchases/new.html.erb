@@ -1,1 +1,41 @@
-<%= form_tag %>
+<%= form_tag do %>
+
+<div>
+<%= label_tag 'name', "What's your name?" %>
+<%= text_field_tag 'name' %>
+</div>
+
+<div>
+<%= label_tag 'quantity', "How many did you get?" %>
+<%= number_field_tag 'quantity' %>
+</div>
+
+<div>
+<%= label_tag 'notes', "Notes" %>
+<%= text_field_tag 'notes' %>
+<div/>
+
+<div>
+<%= label_tag 'added_by', "Who add this?"%>
+<%= text_field_tag 'added_by' %>
+<div/>
+
+
+<div>
+<%= label_tag 'email', "Your email Address?"%>
+<%= text_field_tag 'email'%>
+</div>
+
+<div>
+<%= label_tag 'phone', "Your Phone Number?"%>
+<%= text_field_tag 'phone'%>
+</div>
+
+<div>
+<%=label_tag 'priotiy', "Priority"%>
+<%the_array = ['High', 'Medium', 'Low']%>
+<%= select_tag 'priority', options_for_select(Array[*the_array.collect {|v,i| [v,the_array.index(v)] }])%>
+</div>
+
+
+<% end %>
